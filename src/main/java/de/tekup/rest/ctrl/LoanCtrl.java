@@ -18,8 +18,8 @@ public class LoanCtrl {
 	private LoanService service;
 	
 	@PostMapping(path="/check/client/status",
-			consumes = MediaType.APPLICATION_JSON_VALUE,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+			consumes = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},
+			produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
 	public WsResponse getStaus(@RequestBody CustomerRequest request) {
 		return service.getLoanStatus(request);
 	}
